@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Logs{% endblock title %}
+
+{% block content %}
+
+{% for article in object_list %}
+    <div class="card bg-light">
+        <div class="card-header">
+            <span class="font-weight-bolder text-monospace">{{ article.title }}</span> 
+            <span class="text-monospace text-muted"> by {{ article.author }} | {{ article.date }}</span>
+        </div>
+        <div class="card-body alert-dark text-body">
+            {{ article.body }}
+        </div>
+        <div class="card-footer text-muted text-center">
+            <a href="{% url 'article_edit' article.pk %}">Edit</a> | <a href="{% url 'article_delete' article.pk %}">Delete</a>
+        </div>
+    </div>
+    <br />
+{% endfor %}
+
+{% endblock content %}

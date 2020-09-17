@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home-Log Project{% endblock title %}
+
+{% block content %}
+
+<div class="jumbotron bg-dark text-white rounded">
+    <h1 class="display-4">Django Log Project</h1>
+    <p class="text-light">A Log Web Application built using Django Framework.</p>
+    <p><a class="btn btn-primary" href="{% url 'article_list' %}">All Logs</a><a class="btn btn-success ml-2" href="{% url 'article_new' %}">+ New</a> </p>
+</div>
+
+{% endblock content %}
+
